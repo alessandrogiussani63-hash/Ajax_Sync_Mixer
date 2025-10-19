@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Smoke Test</title>
+  <link rel="stylesheet" href="vendor/jquery-ui/jquery-ui.min.css">
+</head>
+<body>
+  <h1>Smoke Test</h1>
+  <div id="dialog" title="jQuery UI Loaded" style="display:none;">Hello from jQuery UI!</div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+  <script src="vendor/socket.io/socket.io.min.js"></script>
+  <script src="vendor/webrtc/DataChannel.js"></script>
+  <script>
+    (function(){
+      const results = [];
+      results.push(['jQuery', !!window.jQuery]);
+      results.push(['jQueryUI Dialog', !!(jQuery && jQuery.ui && jQuery.fn.dialog)]);
+      results.push(['Socket.IO', !!window.io]);
+      results.push(['DataChannel', !!window.DataChannel || !!window.DataConnection || !!window.RTCMultiConnection]);
+
+      const ok = results.every(r => r[1]);
+      const pre = document.createElement('pre');
+      pre.textContent = results.map(r => r[0] + ': ' + (r[1] ? 'OK' : 'MISSING')).join('\n');
+      document.body.appendChild(pre);
+
+      if (jQuery && jQuery.fn.dialog) {
+        jQuery('#dialog').show().dialog();
+      }
+
+      if (!ok) {
+        const warn = document.createElement('p');
+        warn.textContent = 'Some libraries are missing. Run ./vendor_fetch.sh then reload.';
+        document.body.appendChild(warn);
+      }
+    })();
+  </script>
+</body>
+</html>
