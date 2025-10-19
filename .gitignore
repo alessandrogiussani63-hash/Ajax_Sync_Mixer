@@ -1,0 +1,6 @@
+﻿synk.json
+/media/*
+/vendor/*
+*.log
+.DS_Store
+Thumbs.db
