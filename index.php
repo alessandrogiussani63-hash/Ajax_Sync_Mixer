@@ -112,5 +112,6 @@
 
     <script src="js/get_switch.js"></script>
 <script src="js/ajax_synk.js"></script>
+<script src="js/channels_loader.js"></script>
 </body>
 </html>

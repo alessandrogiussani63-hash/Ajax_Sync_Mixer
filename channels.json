@@ -1,0 +1,14 @@
+{
+  "1": {
+    "name": "Promo A",
+    "html": "<div class='embed'><video src='/media/promoA.mp4' autoplay loop muted playsinline></video></div>"
+  },
+  "2": {
+    "name": "Promo B",
+    "html": "<div class='embed'><img src='/media/bannerB.jpg' alt='Banner B'></div>"
+  },
+  "3": {
+    "name": "Live Stream",
+    "html": "<div class='embed'><iframe src='https://player.example.com/live' allow='autoplay; fullscreen' loading='lazy'></iframe></div>"
+  }
+}
