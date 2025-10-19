@@ -85,3 +85,8 @@ Built with creative and technical collaboration from *ChatGPT (the “little bro
 
 ### 🧾 License
 MIT License – free to use and modify with attribution.
+
+
+### Contact
+
+For questions or support: **alessandro@giussani.net**
